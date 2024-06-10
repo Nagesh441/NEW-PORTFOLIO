@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Nag's</title>
+		<meta name="description" content="A collection of decorative animated background shapes powered by WebGL and TweenMax." />
+		<meta name="keywords" content="webgl, background, shape, web design, web development, tweenmax, gsap, animation" />
+		<meta name="author" content="Louis Hoebregts for Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="https://fonts.googleapis.com/css?family=Barlow:400,500,700|Playfair+Display" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo1.css" />
+		<link rel="stylesheet" type="text/css" href="pater/pater.css" />
+		<link rel="stylesheet"  href="style.css" />
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+	</head>
+	<body class="demo-1">
+		<main>
+			<div class="content">
+				<canvas class="scene scene--full" id="scene"></canvas>
+				<script type="x-shader/x-vertex" id="wrapVertexShader">
+					attribute float size;
+					attribute vec3 color;
+					varying vec3 vColor;
+					void main() {
+						vColor = color;
+						vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+						gl_PointSize = size * ( 350.0 / - mvPosition.z );
+						gl_Position = projectionMatrix * mvPosition;
+					}
+				</script>
+				<script type="x-shader/x-fragment" id="wrapFragmentShader">
+					varying vec3 vColor;
+					uniform sampler2D texture;
+					void main(){
+						vec4 textureColor = texture2D( texture, gl_PointCoord );
+						if ( textureColor.a < 0.3 ) discard;
+						vec4 color = vec4(vColor.xyz, 1.0) * textureColor;
+						gl_FragColor = color;
+					}
+				</script>
+				<div class="content__inner">
+					<h2 class="content__title">NAGAYERRISWAMY KAVALI</h2>
+					<h3 class="content__subtitle">WEB DEBELOPER</h2>
+						
+				</div>
+			</div>
+		</main>
+	
+
+		
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="main.js"></script>
+		<link rel="stylesheet" href="main.css">
+	
+		<!-- BACK TO TOP ARROW -->
+		<a class="smoothScroll" href="#welcome"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" fill="transprant" id="btt" class="bi bi-arrow-bar-up arrowdown" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5m-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5" />
+			</svg></a>
+	
+	
+		<!-- NAV -->
+		<div id="myNav" class="overlay">
+	
+			<!-- Button to close the overlay navigation -->
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	
+			<!-- Overlay content -->
+			<div class="overlay-content">
+				<a class="smoothScroll" href="#welcome" onclick="closeNav()">Home</a>
+				<a class="smoothScroll" href="#about" onclick="closeNav()">About</a>
+				<a class="smoothScroll" href="#portfolio" onclick="closeNav()">Portfolio</a>
+				<a href="Nagayerriswamyccbp.pdf" download="Nagayerriswamyccbp.pdf">My CV/ Resume</a>
+			</div>
+			
+	
+	
+		</div>
+	
+		<!-- Use any element to open/show the overlay navigation menu -->
+		<span id="openmenu" onclick="openNav()"><b>Menu</b></span>
+
+		
+	
+		<!-- ABOUT -->
+		<div id="about" class="about">
+			<h1>About Me</h1>
+			<center>
+				<div id="self">
+					<img src="Firefly 20240509102450.png"/>
+				</div>
+			</center>
+			<br>
+			<p>Hi! I’m NagaYerriswamy Kavali, and web development is my passion.<br><br> I help people build websites they love, and I absolutely adore making people smile.<br><br> When I’m not programming, you can find me drawing, or taking some nature pics.
+				<br><br>If you'd like, scroll down to see some examples of my work!<br><br>Want to work together? I’d love to hear from you!
+			</p>
+			<br><br>
+		   <div class="contact">
+				<span id="email">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-heart" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l3.235 1.94a2.8 2.8 0 0 0-.233 1.027L1 5.384v5.721l3.453-2.124q.219.416.55.835l-3.97 2.443A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741l-3.968-2.442q.33-.421.55-.836L15 11.105V5.383l-3.002 1.801a2.8 2.8 0 0 0-.233-1.026L15 4.217V4a1 1 0 0 0-1-1zm6 2.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
+					</svg> <a href="mailto:nagesh.ece.441@gmail.com"> nagesh.ece.441@gmail.com</a>
+				</span>
+				<span id="portScroll">
+					<a class="smoothScroll" href="#portfolio"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+							<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+							<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+						</svg> View My Portfolio</a>
+				</span><br><br><br><br>
+				<span id="portScroll">
+					<a class="smoothScroll" href="#portfolio"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+					  </svg><a href="tel:+918390312957"> Call Us: 8309312957</a>
+					</a></span>
+			
+		   </div>
+			<!--git-->
+			
+		</div>
+			<!--git-->
+		</div>
+	
+		<!-- PORTFOLIO -->
+		<div class="portfolio" id="portfolio">
+			<h1>Portfolio</h1>
+			<h3>Here you'll find some projects I've worked on! Click on a project to see a demo of it.</h3>
+			<br>
+	
+	
+		<div class="void" id="void">
+			<div class="crop">
+			<ul id="card-list" style="--count: 5;">
+				<li><div class="card"><a href="https://foodsitebynag.ccbp.tech/"><span class="model-name">foodMunch</span><span>A responsive website that lets you browse through a wide range of food items with ease.</span></a></div></li>
+				<li><div class="card"><a href="https://todoappbynag.ccbp.tech"><span class="model-name">ToDo Application</span><span>A task management solution, designed to make life easier.</span></a></div></li>
+				<li><div class="card"><a href="https://nageshjobby.ccbp.tech"><span class="model-name">Jobby App</span><span>A Brought to life an all-encompassing job search platform, Jobby App.</span></a></div></li>
+				<li><div class="card"><a href="https://wikiclonebynag.ccbp.tech/"><span class="model-name">Wikipedia Clone</span><span>A wikipedia clone for searching in wikipedia </span></a></div></li>
+				<li><div class="card"><a href="https://counterbynag.ccbp.tech/"><span class="model-name">Counter app</span><span>A counter app created by using HTML and CSS.</span></a></div></li>
+			</ul>
+			<div class="last-circle"></div>
+			<div class="second-circle"></div>
+			</div>
+			<div class="mask"></div>
+			<div class="center-circle"></div>
+		<div>
+	
+			
+	</div>
+	<div>
+		
+	</div>
+	
+	
+
+		<script src="js/demo.js"></script>
+		<script src="js/three.min.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+		<script src="js/demo1.js"></script>
+	</body>
+</html>
